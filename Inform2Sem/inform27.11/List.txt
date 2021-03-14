@@ -1,0 +1,6 @@
+list[0] = 1  0x55d94f561ae0
+list[1] = 2  0x55d94f561b00
+list[2] = 3  0x55d94f561b20
+list[3] = 4  0x55d94f561b40
+list[4] = 5  0x55d94f561b60
+list[5] = 6  (nil)
