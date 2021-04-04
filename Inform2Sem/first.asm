@@ -10,5 +10,5 @@
  int 0x80
  section .data
  msgty db 'MIPT', 0, 0xA
- msglty equ &-msgty
+ msglty equ $-msgty
 
