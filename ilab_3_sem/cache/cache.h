@@ -5,6 +5,8 @@
 #include <fstream>
 #include <ctime>
 #include <iterator>
+#include <cassert>
+
 using namespace std;
 
 const int IN_CODE   = 1;
@@ -14,12 +16,13 @@ const int MAIN_CODE = 3;
 template<typename T, typename KeyT = int>
 class Cache
     {
-    struct Node_d {T data; char list_code = 0; int page_numb;}; //Node with real data
+    struct Node_d {T data; char list_code = 0; int page_numb = 0;}; //Node with real data
     using ListIt = typename std::list<Node_d>::iterator;
     
     public:
         Cache(int in_size, int out_size, int main_size);
         void Searching(int page_number);
+        void Print_curren_state_of_lists();
         long hit_counter_ = 0;
         
         
@@ -36,7 +39,7 @@ class Cache
         
 
         void Push_to_input(int page_number);
-        void Push_to_output(Node_d elem);
+        void Push_to_output(int);
         void Push_to_main_list(int page_number);
         T get_data(int page_number);
 
